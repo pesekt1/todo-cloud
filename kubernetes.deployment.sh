@@ -36,6 +36,16 @@ kubectl port-forward svc/todo-api 5000:5000 &
 TODO_API_PORT_FORWARD_PID=$!
 echo "Port forwarding for todo-api set up on port 5000."
 
+# Function to clean up port-forward processes
+cleanup() {
+  echo "Terminating port-forward processes..."
+  kill $MONGO_PORT_FORWARD_PID $TODO_APP_PORT_FORWARD_PID $TODO_API_PORT_FORWARD_PID 2>/dev/null
+  exit
+}
+
+# Trap script exit (Ctrl+C) to clean up
+trap cleanup SIGINT SIGTERM
+
 # Keep script running until user terminates
 echo "Port forwarding set up. Press Ctrl+C to terminate."
 wait
