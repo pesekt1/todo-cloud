@@ -14,7 +14,7 @@ app.use(express.json());
 app.use("/todos", todoRouter);
 
 app.get("/", (req, res) => {
-  res.send("Hello World NEW");
+  res.send("Hello World v2");
 });
 
 const PORT = process.env.PORT || 5000;
