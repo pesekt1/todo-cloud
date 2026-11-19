@@ -1,3 +1,5 @@
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/pesekt1/todo-cloud)
+
 # Todo web application demo for IT Infrastructure course
 
 Clone the repository - for example using VS Code.
